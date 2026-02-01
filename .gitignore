@@ -1,0 +1,39 @@
+# Composer dependencies
+/vendor/
+/composer.lock
+
+# Logs and cache
+/storage/
+/logs/
+/tmp/
+/cache/
+
+# Environment & config
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# PHPUnit coverage & reports
+coverage/
+phpunit.xml.cache
+
+# Node / frontend (if any)
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore sensitive files
+*.key
+*.pem
