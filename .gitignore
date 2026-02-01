@@ -3,7 +3,7 @@
 /composer.lock
 
 # Logs and cache
-/storage/
+# /storage/
 /logs/
 /tmp/
 /cache/
