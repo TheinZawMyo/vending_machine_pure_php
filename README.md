@@ -55,18 +55,31 @@ A PHP application for a vending machine system with product management, inventor
 
 | Method | Route | Description |
 |--------|--------|-------------|
+| GET | `/` | Redirect to login if not logged in, else to admin dashboard or products |
 | GET | `/login` | Login form |
 | POST | `/login` | Login |
+| GET | `/register` | Register form |
+| POST | `/register` | Register |
 | GET | `/logout` | Logout |
 | GET | `/products` | List products (pagination, sort) |
 | GET | `/products/{id}` | Show product |
-| GET | `/products/{id}/purchase` | Purchase form (attribute-style URL) |
+| GET | `/products/{id}/purchase` | Purchase form |
 | POST | `/products/{id}/purchase` | Process purchase |
 | GET | `/products/create` | Create form (Admin) |
 | POST | `/products/create` | Create product (Admin) |
 | GET | `/products/{id}/edit` | Edit form (Admin) |
 | POST | `/products/{id}/update` | Update product (Admin) |
 | GET | `/products/{id}/delete` | Delete product (Admin) |
+| GET | `/transactions` | User transactions |
+| GET | `/admin` | Admin dashboard |
+| GET | `/admin/inventory` | Admin inventory |
+| GET | `/admin/transactions` | Admin transactions |
+| GET | `/users` | List users (Admin) |
+| GET | `/users/create` | Create user form (Admin) |
+| POST | `/users/create` | Create user (Admin) |
+| GET | `/users/{id}/edit` | Edit user form (Admin) |
+| POST | `/users/{id}/update` | Update user (Admin) |
+| GET | `/users/{id}/delete` | Delete user (Admin) |
 
 ## REST API
 
@@ -91,11 +104,9 @@ Authorization: Bearer <token>
 
 **Endpoints**
 
-- `GET /api/products` — List (query: `page`, `per_page`, `sort`, `dir`)
-- `GET /api/products/{id}` — Show one
-- `POST /api/products` — Create (Admin, JSON body)
-- `PUT /api/products/{id}` — Update (Admin, JSON body)
-- `DELETE /api/products/{id}` — Delete (Admin)
+- `POST /api/auth/login` — Get JWT token (JSON body: `{"username": "...", "password": "..."}`)
+- `GET /api/products` — List products (query: `page`, `per_page`, `sort`, `dir`)
+- `GET /api/products/{id}` — Show product
 - `POST /api/products/{id}/purchase` — Purchase (JSON: `{"quantity": 1}`)
 
 ## Tests

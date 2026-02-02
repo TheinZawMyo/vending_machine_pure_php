@@ -20,7 +20,7 @@ class JwtAuth
     public function __construct(array $config = [], ?UserRepository $userRepository = null)
     {
         $config = array_merge(
-            require __DIR__ . '/../../app/Config/jwt.php',
+            require __DIR__ . '/../../configs/jwt.php',
             $config
         );
         $this->secret = $config['secret_key'];
